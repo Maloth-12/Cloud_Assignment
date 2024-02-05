@@ -3,13 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <title>Register</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #dynamic-content {
+            text-align: center;
+            background-color: black;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+           color: white;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: white;
+            text-align: justify;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #message {
+            margin-bottom: 16px;
+            color: #555;
+        }
+
+        a {
+            color: #4caf50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-<div align="center">
-    <div><h1>Registration Page</h1></div>
-    <div>
-        <form action="{{url_for('registration')}}" method="POST" enctype="multipart/form-data">
-            <div>{{ message }}</div><br><br>
+<div>
+    <div id="dynamic-content">
+        <form action="{{url_for('registration')}}" method="POST" enctype="multipart/form-data" id="registration-form">
+	    <div><h1>Registration Page</h1></div>
+            <div>{{ message }}</div><br>
             <label>User Name : </label><input id="username" name="username" type="text" placeholder="User Name" autocomplete="off"/> <br><br>
             <label>Password : </label><input id="password" name="password" type="password" placeholder="Password" autocomplete="off"/> <br><br>
             <label>First Name : </label><input id="firstname" name="firstname" type="text" placeholder="First Name" autocomplete="off"/> <br><br>
